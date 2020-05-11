@@ -46,8 +46,8 @@ public class StringTest {
     @ParameterizedTest
     @ValueSource(strings = "abc")
     void charAtIndexOutOfBoundsExceptionTest(final String input) {
-        assertThatThrownBy(() -> {
-            char result = input.charAt(3);
-        }).isInstanceOf(IndexOutOfBoundsException.class).hasMessageContaining("String index out of range: 3");
+        assertThatThrownBy(() -> input.charAt(3))
+                .isInstanceOf(IndexOutOfBoundsException.class)
+                .hasMessageContaining("String index out of range: 3");
     }
 }
